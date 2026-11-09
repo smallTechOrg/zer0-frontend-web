@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Zer0 is the multi-agent OS for small businesses. Agents run your sales, workshops, data and cloud end to end. You approve what matters. Everything is audited.",
+    "Zer0 is the multi-agent OS for small businesses. Agents run your sales, website chat, data and cloud end to end. You approve what matters. Everything is audited.",
 
   // Keywords hint for crawlers (low ranking signal but still used by some engines)
   keywords: [
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Zer0 — The Multi-Agent OS for Small Businesses",
     description:
-      "Zer0 is the multi-agent OS for small businesses. Agents run your sales, workshops, data and cloud end to end. You approve what matters. Everything is audited.",
+      "Zer0 is the multi-agent OS for small businesses. Agents run your sales, website chat, data and cloud end to end. You approve what matters. Everything is audited.",
     url: "https://zer0.smalltech.in",
     siteName: "Zer0",
     locale: "en_US",

@@ -11,7 +11,7 @@ export const hero = {
   titleAccent: "small businesses.",
   oneLiner: "Agents do the busywork. You make the calls.",
   body:
-    "Zer0 runs your sales, workshops, data and cloud on agents that work end to end, with approval gates where it matters and an audit trail for everything.",
+    "Zer0 runs your sales, website chat, data and cloud on agents that work end to end, with approval gates where it matters and an audit trail for everything.",
 };
 
 /* Illustrative run shown beside the hero. */
@@ -64,7 +64,7 @@ export const products: Product[] = [
   {
     title: "sales0",
     featured: true,
-    description: "Your sales team's autopilot. From buyer intent to booked follow-up.",
+    description: "The AI-native CRM. From buyer intent to booked follow-up.",
     points: [
       "Finds buyer enquiries",
       "Keeps the CRM current",
@@ -73,6 +73,12 @@ export const products: Product[] = [
     ],
     url: "https://sales0.smalltech.in",
     cta: "Visit sales0",
+  },
+  {
+    title: "chatbot0",
+    description: "An AI chat agent on your website. Answers visitors, captures leads, hands you the warm conversation.",
+    url: "https://chatbot0.smalltech.in",
+    cta: "Visit chatbot0",
   },
   {
     title: "workshop0",

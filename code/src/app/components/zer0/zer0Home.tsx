@@ -330,7 +330,7 @@ export default function Zer0Home() {
 
 function FeatureTile({ product }: { product: Product }) {
   return (
-    <div className="md:col-span-2 md:row-span-2 surface-inverse rounded-[16px] p-7 md:p-8 flex flex-col justify-between">
+    <div className="md:col-span-2 md:row-span-3 surface-inverse rounded-[16px] p-7 md:p-8 flex flex-col justify-between">
       <div>
         <span className="inline-block text-[10px] font-[700] tracking-[1.5px] uppercase px-2.5 py-1 rounded-full text-gold border border-ink-line">
           Featured
