@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Zer0 Pricing — Plans for Every Small Business",
     description:
       "Simple, transparent pricing for Zer0 AI agents. Start free and scale as you grow.",
-    url: "https://zero.smalltech.in/pricing",
+    url: "https://zer0.smalltech.in/pricing",
   },
 };
 

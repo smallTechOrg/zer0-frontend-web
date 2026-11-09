@@ -1,5 +1,5 @@
-import Home from "./homePage";
+import Zer0Home from "./components/zer0/zer0Home";
 
 export default function Page() {
-  return <Home />;
+  return <Zer0Home />;
 }

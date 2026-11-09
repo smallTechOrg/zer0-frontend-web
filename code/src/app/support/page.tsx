@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Zer0 AI Support Agent — Instant Customer Answers",
     description:
       "Reduce support tickets and delight customers with Zer0's always-on AI support agent.",
-    url: "https://zero.smalltech.in/support",
+    url: "https://zer0.smalltech.in/support",
   },
 };
 export default function SupportRoute() {

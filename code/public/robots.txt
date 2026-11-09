@@ -1,5 +1,5 @@
 # robots.txt — tells search engine crawlers which pages they can/cannot index.
-# Served at: https://zero.smalltech.in/robots.txt
+# Served at: https://zer0.smalltech.in/robots.txt
 
 # Apply these rules to all crawlers (Googlebot, Bingbot, etc.)
 User-agent: *
@@ -12,4 +12,4 @@ Disallow: /embed
 Disallow: /dashboard
 
 # Tell crawlers where to find the full list of pages
-Sitemap: https://zero.smalltech.in/sitemap.xml
+Sitemap: https://zer0.smalltech.in/sitemap.xml

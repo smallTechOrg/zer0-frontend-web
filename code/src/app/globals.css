@@ -28,6 +28,46 @@
   --color-liver-brown: #023047;
   --color-mauve-bark: #219EBC;
   --color-expresso: #023047;
+
+  /* ---- smallTech brand tokens (Brand Guidelines v1.2) ----
+     Same names as smalltech-frontend-web/code/src/app/globals.css so the two
+     sites share one vocabulary. Used by the Zer0 homepage; the legacy palette
+     above still drives /embed, /chat, /signup, /dashboard and the old SPA pages.
+     Readme ~60% · Terminal Ink ~25% · Gold Master ~12% · status accents <5%. */
+  --color-gold: #D68A2E;          /* Gold Master — buttons, key shapes */
+  --color-gold-60: #B2823B;       /* hover/pressed */
+  --color-gold-70: #83602E;       /* hero accent gradient start */
+  --color-ink: #1C1B18;           /* Terminal Ink — text, dark grounds */
+  --color-readme: #F5F1EE;        /* Readme — default background */
+  --color-surface: #FBFBF9;       /* cards on Readme */
+  --color-muted: #4F4D4A;         /* secondary text */
+  --color-line: #C4C3C0;          /* borders, rules */
+  --color-ink-surface: #4F4D4A;
+  --color-ink-muted: #939290;     /* secondary text on ink */
+  --color-ink-line: #7B7977;      /* borders on ink */
+  --color-merged: #708D55;
+  --color-reverted: #C54C3C;
+  --color-pending: #2A6FB0;
+}
+
+/* Brand-scoped wrapper: Montserrat only (the rest of the app keeps Outfit). */
+.zer0-brand {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Dark panel — flat Terminal Ink, as in the smallTech reference. */
+.surface-inverse {
+  background: var(--color-ink);
+}
+
+/* Small caps label used above section titles (13px caps, +0.18em, SemiBold). */
+.zer0-brand .label {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-muted);
+  line-height: 1.4;
 }
 
 body {

@@ -1,13 +1,15 @@
 // opengraph-image.tsx — generates a static OG/Twitter card image at build time.
 // Next.js static export runs ImageResponse during `next build` and outputs
-// a PNG to code/out/opengraph-image.png, served at https://zero.smalltech.in/opengraph-image.png
+// a PNG to code/out/opengraph-image.png, served at https://zer0.smalltech.in/opengraph-image.png
 // Referenced automatically by Next.js via the metadata in layout.tsx.
 // No `runtime = 'edge'` — that's incompatible with static export.
+// Colours follow the smallTech brand tokens (readme / ink / gold). Flat, no effects,
+// except the approved gold-70 -> gold gradient on the accent phrase.
 
 import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
-export const alt = "Zer0 — AI Agents for Small Businesses";
+export const alt = "Zer0 — The Multi-Agent OS for Small Businesses";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -16,93 +18,52 @@ export default function Image() {
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #0a1628 0%, #219EBC 100%)",
+          background: "#F5F1EE",
           width: "100%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "space-between",
           fontFamily: "sans-serif",
-          padding: "80px",
+          padding: "72px 80px",
+          color: "#1C1B18",
         }}
       >
-        {/* Logo mark */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "16px",
-            marginBottom: "40px",
-          }}
-        >
+        <div style={{ display: "flex", fontSize: "44px", fontWeight: 700 }}>Zer0</div>
+
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
-              width: "72px",
-              height: "72px",
-              background: "rgba(255,255,255,0.15)",
-              borderRadius: "18px",
               display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              border: "2px solid rgba(255,255,255,0.3)",
+              fontSize: "20px",
+              fontWeight: 600,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "#4F4D4A",
+              marginBottom: "24px",
             }}
           >
-            <span style={{ color: "white", fontSize: "40px", fontWeight: "900" }}>
-              Z
-            </span>
+            Zer0 by smallTech
           </div>
-          <span style={{ color: "white", fontSize: "52px", fontWeight: "800" }}>
-            Zer0
-          </span>
-        </div>
-
-        {/* Headline */}
-        <h1
-          style={{
-            color: "white",
-            fontSize: "68px",
-            fontWeight: "900",
-            textAlign: "center",
-            margin: "0 0 24px",
-            lineHeight: 1.1,
-          }}
-        >
-          AI Agents for
-          <br />
-          Small Businesses
-        </h1>
-
-        {/* Tagline */}
-        <p
-          style={{
-            color: "rgba(255,255,255,0.7)",
-            fontSize: "28px",
-            textAlign: "center",
-            margin: "0 0 48px",
-          }}
-        >
-          Embeddable · No Code · 24/7 Support
-        </p>
-
-        {/* Pills */}
-        <div style={{ display: "flex", gap: "16px" }}>
-          {["Sales Automation", "Lead Capture", "Customer Support"].map((label) => (
-            <div
-              key={label}
+          <div style={{ display: "flex", flexDirection: "column", fontSize: "72px", fontWeight: 700, lineHeight: 1.1 }}>
+            <span>The multi-agent OS for</span>
+            <span
               style={{
-                background: "rgba(255,255,255,0.15)",
-                border: "1px solid rgba(255,255,255,0.3)",
-                borderRadius: "100px",
-                padding: "10px 24px",
-                color: "white",
-                fontSize: "20px",
-                fontWeight: "600",
+                backgroundImage: "linear-gradient(90deg, #83602E, #D68A2E)",
+                backgroundClip: "text",
+                color: "transparent",
               }}
             >
-              {label}
-            </div>
-          ))}
+              small businesses.
+            </span>
+          </div>
+        </div>
+
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <span style={{ fontSize: "28px", color: "#4F4D4A" }}>
+            Agents do the busywork. You make the calls.
+          </span>
+          <span style={{ fontSize: "24px", fontWeight: 600 }}>zer0.smalltech.in</span>
         </div>
       </div>
     ),
