@@ -87,7 +87,8 @@ export default function Zer0Home() {
           }`}
         >
           <a href="#home" className="shrink-0 text-ink text-[26px] md:text-[28px] font-[700] leading-none tracking-[-0.01em]" aria-label="Zer0 home">
-            Zer0
+            {/* 0-line wordmark (same pattern as blog0): name in ink, the 0 in Gold Master */}
+            Zer<span className="text-gold">0</span>
           </a>
 
           <div className="flex items-center gap-9">

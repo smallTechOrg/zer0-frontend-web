@@ -62,9 +62,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 
   // Favicon — SVG favicon (app/icon.svg is also picked up automatically by Next.js)
-  icons: {
-    icon: { url: "/logo.svg", type: "image/svg+xml" },
-  },
+  // Favicons come from the file conventions in app/ (icon.svg, favicon.ico,
+  // apple-icon.png): the shared 0-line mark, same as blog0.
 
   // Open Graph tags — used by Facebook, LinkedIn, Slack, etc. for link previews
   openGraph: {
