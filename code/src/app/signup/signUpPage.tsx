@@ -109,7 +109,7 @@ export default function SignUpPage() {
       }
 
       // 4. Build the embed script tag
-      const scriptTag = `<script\n  src="https://zero.smalltech.in/embed.js"\n  data-chat-url="https://zero.smalltech.in/embed"\n  data-colour="${colour}"\n  data-tagline="Chat with us"\n  defer\n><\/script>`;
+      const scriptTag = `<script\n  src="https://zer0.smalltech.in/embed.js"\n  data-chat-url="https://zer0.smalltech.in/embed"\n  data-colour="${colour}"\n  data-tagline="Chat with us"\n  defer\n><\/script>`;
       setEmbedScript(scriptTag);
       analytics.track('signup_form_success', {
         website: website.trim(),

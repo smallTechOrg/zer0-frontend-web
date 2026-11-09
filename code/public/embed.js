@@ -22,7 +22,7 @@
   const script = document.currentScript;
   const chatUrl =
     document.currentScript.getAttribute("data-chat-url") ||
-    "https://zero.smalltech.in/embed";
+    "https://zer0.smalltech.in/embed";
 
   // Get the host website domain
   const hostWebsite = window.location.origin;
