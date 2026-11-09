@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "About Zer0 — Built by SmallTech",
     description:
       "SmallTech's mission is to give small businesses the same AI superpowers that enterprises use.",
-    url: "https://zero.smalltech.in/about",
+    url: "https://zer0.smalltech.in/about",
   },
 };
 

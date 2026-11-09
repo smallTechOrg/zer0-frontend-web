@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Sign Up - Zer0 AI Sales Agent",
     description:
       "Create your free Zer0 account and deploy an AI agent on your website in minutes.",
-    url: "https://zero.smalltech.in/signup",
+    url: "https://zer0.smalltech.in/signup",
   },
 };
 

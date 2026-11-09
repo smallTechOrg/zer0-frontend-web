@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Industry Solutions",
     description:
         "Zer0 AI agents built for your industry — e-commerce, healthcare, real estate, education, and more. Embed a 24/7 AI agent in minutes, no code required.",
-   url: "https://zero.smalltech.in/industry",
+   url: "https://zer0.smalltech.in/industry",
   },
 };
 

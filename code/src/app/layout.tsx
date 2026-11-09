@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Montserrat, Outfit } from "next/font/google";
 import "./globals.css";
 import NetworkStatusBanner from "./components/common/networkStatus";
 import Script from "next/script";
@@ -12,38 +12,45 @@ const outfit = Outfit({
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
+// Brand font for the Zer0 umbrella homepage (smallTech brand: Montserrat only).
+// Only exposes a CSS variable; pages opt in via the .zer0-brand wrapper.
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 // SEO metadata applied to every page as defaults.
 // Individual route pages (e.g. /pricing/page.tsx) can override any of these
 export const metadata: Metadata = {
   // Required base URL so Next.js can resolve relative canonical/OG URLs correctly.
   // Without this, alternates.canonical "/" would render as a bare "/" instead of
-  // the full "https://zero.smalltech.in/" in the <head>.
-  metadataBase: new URL("https://zero.smalltech.in"),
+  // the full "https://zer0.smalltech.in/" in the <head>.
+  metadataBase: new URL("https://zer0.smalltech.in"),
 
   title: {
     // Fallback title used when a page doesn't export its own metadata.title
-    default: "Zer0 — AI Agents for Small Businesses",
+    default: "Zer0 — Operationalising Agentic AI for Small Businesses",
     // Template applied to all child page titles: e.g. "Pricing" → "Pricing | Zer0"
     template: "%s | Zer0",
   },
 
   description:
-    "Zer0 by SmallTech gives small businesses an embeddable AI agent that handles sales, support, and lead capture — 24/7, no code required.",
+    "Zer0 by smallTech redesigns small-business workflows for the agentic age: agents run the repetitive work end to end, people approve what matters, and every step is audited.",
 
   // Keywords hint for crawlers (low ranking signal but still used by some engines)
   keywords: [
-    "AI sales agent for small business",
-    "embeddable chatbot",
+    "agentic AI for small business",
+    "agentic workflows",
+    "AI agents for small business",
+    "business workflow automation",
+    "human-in-the-loop AI",
     "AI sales agent",
-    "AI customer support",
-    "lead capture AI",
-    "website chatbot",
-    "no-code AI agent",
-    "small business automation",
-    "AI chatbot for websites",
-    "AI chat agent for websites",
-    "AI chatbot for real estate",
-    "AI chatbot for ecommerce websites"
+    "AI inbox agent",
+    "AI data analyst",
+    "AI security audit",
+    "Zer0",
+    "smallTech",
   ],
 
   // Explicitly tell crawlers to index and follow links on all pages.
@@ -61,24 +68,24 @@ export const metadata: Metadata = {
 
   // Open Graph tags — used by Facebook, LinkedIn, Slack, etc. for link previews
   openGraph: {
-    title: "Zer0 — AI Agents for Small Businesses",
+    title: "Zer0 — Operationalising Agentic AI for Small Businesses",
     description:
-      "Zer0 by SmallTech gives small businesses an embeddable AI agent that handles sales, support, and lead capture — 24/7, no code required.",
-    url: "https://zero.smalltech.in",
+      "Zer0 by smallTech redesigns small-business workflows for the agentic age: agents run the repetitive work end to end, people approve what matters, and every step is audited.",
+    url: "https://zer0.smalltech.in",
     siteName: "Zer0",
     locale: "en_US",
     type: "website",
     // opengraph-image.tsx in app/ generates this PNG automatically at build time
-    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Zer0 — AI Agents for Small Businesses" }],
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Zer0 — Operationalising Agentic AI for Small Businesses" }],
   },
 
   // Twitter card — controls how links appear when shared on X/Twitter
   // "summary_large_image" shows a large banner; image comes from opengraph-image.tsx
   twitter: {
     card: "summary_large_image",
-    title: "Zer0 — AI Agents for Small Businesses",
+    title: "Zer0 — Operationalising Agentic AI for Small Businesses",
     description:
-      "Embeddable AI agents for small businesses. Handle sales, support, and leads automatically.",
+      "Agentic workflows for small businesses: agents do the repetitive steps, people make the calls, everything is audited.",
     images: ["/opengraph-image.png"],
   },
 };
@@ -104,23 +111,17 @@ export default function RootLayout({
               name: "Zer0",                     // The official name of the software
               applicationCategory: "BusinessApplication", // Categorizes it for app stores/search rankings
               description:
-                "Embeddable AI agent for small businesses that handles sales, support, and lead capture — 24/7, no code required.", // High-level product summary
+                "Operationalising agentic AI for small businesses: agents that run workflows end to end, with human approval gates and an audit trail.", // High-level product summary
               operatingSystem: "Web Browser",   // Specifies this is a SaaS/Web app, not a Windows/Mac exe
-              url: "https://zero.smalltech.in", // The primary link to the software
-              offers: {
-                "@type": "Offer",               // Begins the pricing/licensing information
-                price: "0",                     // The numerical starting price
-                priceCurrency: "USD",           // The currency for the price above
-                description: "Free plan with 200 conversations/month", // Details of the price level
-              },
+              url: "https://zer0.smalltech.in", // The primary link to the software
               author: {
                 "@type": "Organization",        // Links the software to a legal company/entity
-                name: "SmallTech",              // Name of the parent company
+                name: "smallTech",              // Name of the parent company
                 url: "https://smalltech.in",     // Website of the parent company
-                logo: "https://zero.smalltech.in/logo.svg", // Brand identity for the Knowledge Graph card
+                logo: "https://zer0.smalltech.in/logo.svg", // Brand identity for the Knowledge Graph card
                 contactPoint: {
                   "@type": "ContactPoint",      // Defines how customers can reach the company
-                  email: "zero@smalltech.in",   // Support email address
+                  email: "contact@smalltech.in",   // Support email address
                   contactType: "customer support", // Labels the purpose of this email
                 },
               },
@@ -148,7 +149,7 @@ export default function RootLayout({
         )}
       </head>
       <body
-        className={`${outfit.variable} antialiased min-h-screen flex flex-col`}
+        className={`${outfit.variable} ${montserrat.variable} antialiased min-h-screen flex flex-col`}
       >
         <AnalyticsProvider />
         <NetworkStatusBanner />
