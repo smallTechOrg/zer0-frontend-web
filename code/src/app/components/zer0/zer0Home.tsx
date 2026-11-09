@@ -86,9 +86,8 @@ export default function Zer0Home() {
             scrolled ? "py-3" : "py-5"
           }`}
         >
-          <a href="#home" className="shrink-0 text-ink text-[26px] md:text-[28px] font-[700] leading-none tracking-[-0.01em]" aria-label="Zer0 home">
-            {/* 0-line wordmark (same pattern as blog0): name in ink, the 0 in Gold Master */}
-            Zer<span className="text-gold">0</span>
+          <a href="#home" className="shrink-0" aria-label="Zer0 home">
+            <Wordmark />
           </a>
 
           <div className="flex items-center gap-9">
@@ -304,7 +303,7 @@ export default function Zer0Home() {
       <footer className="border-t border-line mt-8">
         <div className="max-w-[1200px] mx-auto px-[4%] py-10 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[14px] font-[400] text-ink">
           <div className="flex items-center gap-3">
-            <span className="text-ink text-[22px] font-[700] leading-none">Zer0</span>
+            <Wordmark />
             <span className="text-muted text-[14px] font-[500]">by</span>
             <a href="https://smalltech.in" aria-label="smallTech">
               {/* Supplied lockup — never retype. h-9 renders ~163px wide (min 120px). */}
@@ -382,6 +381,16 @@ function SmallTile({ product }: { product: Product }) {
         )}
       </div>
     </div>
+  );
+}
+
+/** 0-line wordmark (same pattern as blog0): name in ink, the 0 in Gold Master.
+    Used in both header and footer so they always match. */
+function Wordmark() {
+  return (
+    <span className="text-ink text-[26px] md:text-[28px] font-[700] leading-none tracking-[-0.01em]">
+      Zer<span className="text-gold">0</span>
+    </span>
   );
 }
 
