@@ -37,8 +37,8 @@ const openChat = () => {
 };
 
 const NAV = [
-  { label: "How it works", href: "#how-it-works" },
   { label: "Products", href: "#products" },
+  { label: "Why Zer0", href: "#why-zer0" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -176,59 +176,6 @@ export default function Zer0Home() {
           </div>
         </section>
 
-        {/* ===== THE AGENTIC AGE ===== */}
-        <section id="agentic-age" className="py-16 scroll-mt-20">
-          <SectionHead
-            eyebrow="The agentic age"
-            title="The same work, split differently"
-            sub="Agents take the repetitive steps. People keep the decisions."
-          />
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="rounded-[16px] bg-surface border border-line p-6 md:p-8">
-              <h3 className="text-ink text-[20px] font-[600] leading-[1.3] mb-5">{comparison.classical.title}</h3>
-              <ul className="space-y-3">
-                {comparison.classical.points.map((pt) => (
-                  <li key={pt} className="flex gap-3 text-muted text-[15px] font-[400] leading-[1.6]">
-                    <span className="text-line font-[700]">—</span>
-                    {pt}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="surface-inverse rounded-[16px] p-6 md:p-8">
-              <h3 className="text-readme text-[20px] font-[600] leading-[1.3] mb-5">{comparison.agentic.title}</h3>
-              <ul className="space-y-3">
-                {comparison.agentic.points.map((pt) => (
-                  <li key={pt} className="flex gap-3 text-ink-muted text-[15px] font-[400] leading-[1.6]">
-                    <span className="text-gold font-[700]">›</span>
-                    {pt}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* ===== HOW IT WORKS ===== */}
-        <section id="how-it-works" className="py-16 scroll-mt-20">
-          <SectionHead
-            eyebrow="How it works"
-            title="One workflow at a time"
-            sub="Map. Ship. Run. Repeat."
-          />
-          <div className="grid md:grid-cols-3 gap-4">
-            {steps.map((s, i) => (
-              <div key={s.title} className="rounded-[16px] bg-surface border border-line p-6 hover:border-ink-line transition-colors">
-                <span className="block text-muted text-[13px] font-[600] tracking-[0.18em] mb-4">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <strong className="block text-ink text-[18px] font-[700] mb-2">{s.title}</strong>
-                <span className="text-muted text-[14px] font-[400] leading-[1.6]">{s.body}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* ===== PRODUCTS ===== */}
         <section id="products" className="py-16 scroll-mt-20">
           <SectionHead
@@ -256,18 +203,63 @@ export default function Zer0Home() {
           </div>
         </section>
 
-        {/* ===== PRINCIPLES ===== */}
-        <section id="principles" className="py-16 scroll-mt-20">
+        {/* ===== WHY ZER0 (agentic age + how it works + principles) ===== */}
+        <section id="why-zer0" className="py-16 scroll-mt-20">
           <SectionHead
-            eyebrow="Principles"
-            title="How every Zer0 agent behaves"
-            sub="The rules we build to, whichever workflow it is."
+            eyebrow="Why Zer0"
+            title="The same work, split differently"
+            sub="Agents take the repetitive steps. People keep the decisions."
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid lg:grid-cols-[1.25fr_1fr] gap-4">
+            {/* Classical vs Zer0, row by row */}
+            <div className="rounded-[16px] overflow-hidden border border-line grid grid-cols-2">
+              <div className="bg-surface p-5 md:p-6">
+                <h3 className="text-muted text-[12px] font-[700] tracking-[1.5px] uppercase mb-4">{comparison.classical.title}</h3>
+                <ul className="space-y-3">
+                  {comparison.classical.points.map((pt) => (
+                    <li key={pt} className="flex gap-2.5 text-muted text-[14px] font-[400] leading-[1.45]">
+                      <span className="text-line font-[700]">—</span>
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="surface-inverse p-5 md:p-6">
+                <h3 className="text-gold text-[12px] font-[700] tracking-[1.5px] uppercase mb-4">{comparison.agentic.title}</h3>
+                <ul className="space-y-3">
+                  {comparison.agentic.points.map((pt) => (
+                    <li key={pt} className="flex gap-2.5 text-readme text-[14px] font-[500] leading-[1.45]">
+                      <span className="text-gold font-[700]">›</span>
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* How it works: Map, Ship, Run */}
+            <div className="rounded-[16px] bg-surface border border-line p-5 md:p-6 flex flex-col">
+              <h3 className="text-muted text-[12px] font-[700] tracking-[1.5px] uppercase mb-4">How it works</h3>
+              <ol className="space-y-4">
+                {steps.map((s, i) => (
+                  <li key={s.title} className="flex gap-3.5 items-baseline">
+                    <span className="text-gold-70 text-[13px] font-[700] tracking-[0.1em] w-5 shrink-0">{i + 1}</span>
+                    <span className="text-muted text-[14px] font-[400] leading-[1.45]">
+                      <strong className="text-ink text-[16px] font-[700] mr-2">{s.title}</strong>
+                      {s.body}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+
+          {/* Principles: one tight strip */}
+          <div className="mt-4 grid grid-cols-2 lg:grid-cols-4 gap-px rounded-[16px] overflow-hidden border border-line bg-line">
             {principles.map((p) => (
-              <div key={p.title} className="rounded-[16px] p-6 bg-surface border border-line hover:border-ink-line transition-colors">
-                <strong className="block text-ink text-[18px] font-[700] leading-[1.3] mb-2">{p.title}</strong>
-                <span className="text-muted text-[14px] font-[400] leading-[1.6]">{p.body}</span>
+              <div key={p.title} className="bg-readme p-5">
+                <strong className="block text-ink text-[15px] font-[700] leading-[1.3] mb-1">{p.title}</strong>
+                <span className="text-muted text-[13px] font-[400] leading-[1.5]">{p.body}</span>
               </div>
             ))}
           </div>
