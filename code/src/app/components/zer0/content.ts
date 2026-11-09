@@ -1,70 +1,59 @@
 /* Copy for the Zer0 umbrella homepage (zer0.smalltech.in).
    Source: SMA-8 brief (draft messaging). Lines marked "draft" were written for
-   this page and still need the owner's review. Voice: calm, confident, practical. */
+   this page and still need the owner's review. Voice: brief, confident, product-led. */
 
 export const CONTACT_EMAIL = "contact@smalltech.in";
 export const TRAINING_URL = "https://smalltech.in/#training";
 
 export const hero = {
   eyebrow: "Zer0 by smallTech",
-  titleLead: "Your business, rewired for the",
-  titleAccent: "agentic age.",
-  oneLiner: "Operationalising agentic AI for small businesses.",
+  titleLead: "The multi-agent OS for",
+  titleAccent: "small businesses.",
+  oneLiner: "Agents do the busywork. You make the calls.",
   body:
-    "Classical business workflows were designed for people passing work between inboxes and spreadsheets. In the agentic age, agents do the repetitive steps and people make the calls. Zer0 redesigns a small business's workflows around that split — agents that run the work end to end, with a human approval gate wherever it matters, and an audit trail.",
+    "Zer0 runs your sales, workshops, data and cloud on agents that work end to end, with approval gates where it matters and an audit trail for everything.",
 };
 
-/* Illustrative run shown beside the hero (draft). */
+/* Illustrative run shown beside the hero. */
 export const sampleRun: { who: "Agent" | "You"; step: string }[] = [
-  { who: "Agent", step: "Reads the new enquiry and pulls the customer's history" },
-  { who: "Agent", step: "Drafts a reply and a quote" },
+  { who: "Agent", step: "Reads the enquiry, pulls the history" },
+  { who: "Agent", step: "Drafts the reply and quote" },
   { who: "You", step: "Approve, edit or reject" },
-  { who: "Agent", step: "Sends it, updates the sheet, logs every step" },
+  { who: "Agent", step: "Sends, logs, follows up" },
 ];
 
-/* "The agentic age" comparison (draft). */
 export const comparison = {
   classical: {
     title: "Classical workflow",
     points: [
-      "People move data between inboxes, spreadsheets and tools by hand",
-      "Every hand-off waits for someone to notice it",
-      "Routine steps and real decisions sit in the same queue",
-      "The record of what happened lives in people's heads",
+      "Copy-paste between tools",
+      "Hand-offs wait on people",
+      "Busywork and decisions in one queue",
+      "History lives in people's heads",
     ],
   },
   agentic: {
-    title: "Agentic workflow",
+    title: "Zer0 workflow",
     points: [
-      "Agents run the repetitive steps end to end",
-      "People make the calls at clearly marked approval gates",
-      "Work moves as soon as it is ready, not when someone is free",
-      "Every action is written to an audit trail you can read",
+      "Agents run the steps end to end",
+      "You approve at clear gates",
+      "Work moves the moment it's ready",
+      "Every action logged",
     ],
   },
 };
 
-/* How it works — step titles from the brief; descriptions are draft. */
 export const steps = [
-  {
-    title: "Map a workflow",
-    body: "We sit with you and trace one workflow as it runs today: who touches it, which steps repeat, and where a decision is needed.",
-  },
-  {
-    title: "Deploy an agent with human gates",
-    body: "An agent takes over the repetitive steps. Wherever money, customers or judgement are involved, it stops and waits for your approval.",
-  },
-  {
-    title: "Run it, measure it",
-    body: "The agent runs in your day-to-day work. You review the audit trail and the results, and we tune it before moving to the next workflow.",
-  },
+  { title: "Map", body: "Pick one workflow. Find the busywork." },
+  { title: "Ship", body: "Deploy an agent with approval gates." },
+  { title: "Run", body: "Measure, tune, then take on the next workflow." },
 ];
 
 export type Product = {
   title: string;
   description: string;
-  url: string;
-  cta: string;
+  url?: string;
+  cta?: string;
   altUrl?: string;
   altCta?: string;
   featured?: boolean;
@@ -73,66 +62,57 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    title: "Zer0 Sales Agent",
+    title: "sales0",
     featured: true,
-    description:
-      "Autonomous top-of-funnel: finds, researches and qualifies prospects, drafts outreach, hands you the warm conversation.",
+    description: "Your sales team's autopilot. From buyer intent to booked follow-up.",
     points: [
-      "Finds and researches prospects",
-      "Qualifies them before you spend time",
-      "Drafts outreach",
-      "Hands you the warm conversation",
+      "Finds buyer enquiries",
+      "Keeps the CRM current",
+      "Drafts outreach you approve",
+      "Follows up on schedule",
     ],
     url: "https://sales0.smalltech.in",
-    cta: "Visit sales0.smalltech.in",
+    cta: "Visit sales0",
   },
   {
-    title: "Zer0 Inbox Agent",
-    description:
-      "Inbox triage you can audit — collapses hundreds of threads into ~30 decisions, never deletes anything.",
-    url: "https://github.com/smallTechOrg/zero-inbox-agent",
+    title: "workshop0",
+    description: "Hands-on workshops, run live. Milestones, one-tap join, a real-time room dashboard.",
+    url: "https://github.com/smallTechOrg/workshop0",
     cta: "View on GitHub",
   },
   {
-    title: "Zer0 Data Analyst",
-    description:
-      "Your data, asked in English — upload a spreadsheet, get explainable answers with charts.",
-    url: "https://data-analysis-agent-870371939888.us-central1.run.app/app/",
-    cta: "Try it",
-    altUrl: "https://github.com/smallTechOrg/data-analysis-agent",
-    altCta: "Source",
+    title: "data0",
+    description: "Ask your data anything. Plain-English answers, with charts.",
   },
   {
-    title: "Vanguard by Zer0",
-    description:
-      "AI-first security audits with approval gates, evidence capture and immutable audit logs.",
-    url: "https://github.com/smallTechOrg/ai-security-agency",
+    title: "cloud0",
+    description: "Cloud spend and errors, under control. Billing reports, alerts, error tracking.",
+    url: "https://github.com/smallTechOrg/cloud0",
+    cta: "View on GitHub",
+  },
+  {
+    title: "zero-shot-harness",
+    description: "Claude Code skills that ship. One-line idea in, tested project out.",
+    url: "https://github.com/smallTechOrg/zero-shot-harness",
     cta: "View on GitHub",
   },
 ];
 
-/* Principles — titles from the brief; descriptions are draft. */
+/* Coming next — one-liners drafted from each repo's description. */
+export const upcoming: { title: string; description: string }[] = [
+  { title: "inbox0", description: "Every inbox, triaged. Email, WhatsApp, Instagram, LinkedIn." },
+  { title: "recruiter0", description: "Hiring on autopilot. Sourcing to shortlist." },
+  { title: "router0", description: "Free-tier inference, pooled across providers." },
+];
+
 export const principles = [
-  {
-    title: "Human approval at every gate",
-    body: "Agents prepare the work. Anything that matters waits for a person to say yes.",
-  },
-  {
-    title: "Audit everything",
-    body: "Every step an agent takes is recorded, so you can see what it did and why.",
-  },
-  {
-    title: "Start with one workflow",
-    body: "One workflow, done properly, before the next. No big-bang transformation.",
-  },
-  {
-    title: "Priced for small businesses",
-    body: "Built and priced for teams without an IT department or an enterprise budget.",
-  },
+  { title: "Human in the loop", body: "Agents prep. You approve." },
+  { title: "Audit everything", body: "Every step logged. Nothing hidden." },
+  { title: "One workflow first", body: "Prove it, then scale." },
+  { title: "Small-business pricing", body: "No enterprise budget required." },
 ];
 
-/* Closing band (draft). */
 export const closing = {
   title: "Start with one workflow.",
-  body: "Tell us which workflow takes up most of your week. We will map it with you and show where an agent fits.",
+  body: "Tell us what eats your week. We'll show you the agent for it.",
 };

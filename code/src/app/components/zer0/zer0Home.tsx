@@ -15,6 +15,7 @@ import {
   comparison,
   steps,
   products,
+  upcoming,
   principles,
   closing,
   type Product,
@@ -213,7 +214,7 @@ export default function Zer0Home() {
           <SectionHead
             eyebrow="How it works"
             title="One workflow at a time"
-            sub="Three steps, repeated for each workflow you hand over."
+            sub="Map. Ship. Run. Repeat."
           />
           <div className="grid md:grid-cols-3 gap-4">
             {steps.map((s, i) => (
@@ -232,13 +233,26 @@ export default function Zer0Home() {
         <section id="products" className="py-16 scroll-mt-20">
           <SectionHead
             eyebrow="Products"
-            title="The Zer0 family"
-            sub="Agents for specific workflows, each with approval gates and an audit trail."
+            title="The Zer0 suite"
+            sub="One OS, many agents. Each with approval gates and an audit trail."
           />
           <div className="grid md:grid-cols-4 gap-4">
             {products.map((p) =>
               p.featured ? <FeatureTile key={p.title} product={p} /> : <SmallTile key={p.title} product={p} />
             )}
+          </div>
+
+          {/* Coming next */}
+          <div className="mt-4 rounded-[16px] border border-dashed border-line p-6">
+            <span className="block text-muted text-[11px] font-[700] tracking-[1.5px] uppercase mb-4">Coming next</span>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {upcoming.map((u) => (
+                <div key={u.title}>
+                  <strong className="block text-ink text-[17px] font-[700] mb-1">{u.title}</strong>
+                  <span className="text-muted text-[14px] font-[400] leading-[1.5]">{u.description}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -316,7 +330,7 @@ export default function Zer0Home() {
 
 function FeatureTile({ product }: { product: Product }) {
   return (
-    <div className="md:col-span-2 md:row-span-3 surface-inverse rounded-[16px] p-7 md:p-8 flex flex-col justify-between">
+    <div className="md:col-span-2 md:row-span-2 surface-inverse rounded-[16px] p-7 md:p-8 flex flex-col justify-between">
       <div>
         <span className="inline-block text-[10px] font-[700] tracking-[1.5px] uppercase px-2.5 py-1 rounded-full text-gold border border-ink-line">
           Featured
@@ -335,7 +349,7 @@ function FeatureTile({ product }: { product: Product }) {
         )}
       </div>
       <div className="mt-8">
-        <a href={product.url} target="_blank" rel="noreferrer" className={`group ${btnPrimary}`}>
+        <a href={product.url ?? "#"} target="_blank" rel="noreferrer" className={`group ${btnPrimary}`}>
           {product.cta}
           <span className="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
         </a>
@@ -350,14 +364,16 @@ function SmallTile({ product }: { product: Product }) {
       <h3 className="text-ink text-[19px] font-[700] leading-tight mb-2">{product.title}</h3>
       <p className="text-muted text-[14px] font-[400] leading-[1.6] mb-4">{product.description}</p>
       <div className="mt-auto flex flex-wrap items-center gap-4">
-        <a
-          href={product.url}
-          target="_blank"
-          rel="noreferrer"
-          className="text-ink text-[14px] font-[600] underline decoration-line decoration-2 underline-offset-4 hover:decoration-ink"
-        >
-          {product.cta} →
-        </a>
+        {product.url && (
+          <a
+            href={product.url}
+            target="_blank"
+            rel="noreferrer"
+            className="text-ink text-[14px] font-[600] underline decoration-line decoration-2 underline-offset-4 hover:decoration-ink"
+          >
+            {product.cta} →
+          </a>
+        )}
         {product.altUrl && (
           <a href={product.altUrl} target="_blank" rel="noreferrer" className="text-muted text-[14px] font-[500] hover:underline">
             {product.altCta}

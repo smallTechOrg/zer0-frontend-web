@@ -9,7 +9,7 @@
 import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
-export const alt = "Zer0 — Operationalising Agentic AI for Small Businesses";
+export const alt = "Zer0 — The Multi-Agent OS for Small Businesses";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -46,7 +46,7 @@ export default function Image() {
             Zer0 by smallTech
           </div>
           <div style={{ display: "flex", flexDirection: "column", fontSize: "72px", fontWeight: 700, lineHeight: 1.1 }}>
-            <span>Your business, rewired for the</span>
+            <span>The multi-agent OS for</span>
             <span
               style={{
                 backgroundImage: "linear-gradient(90deg, #83602E, #D68A2E)",
@@ -54,14 +54,14 @@ export default function Image() {
                 color: "transparent",
               }}
             >
-              agentic age.
+              small businesses.
             </span>
           </div>
         </div>
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <span style={{ fontSize: "28px", color: "#4F4D4A" }}>
-            Operationalising agentic AI for small businesses.
+            Agents do the busywork. You make the calls.
           </span>
           <span style={{ fontSize: "24px", fontWeight: 600 }}>zer0.smalltech.in</span>
         </div>
