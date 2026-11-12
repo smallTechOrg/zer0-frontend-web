@@ -48,11 +48,11 @@ const navLink =
   "after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300";
 
 const btnPrimary =
-  "inline-flex items-center justify-center gap-2 rounded-[6px] bg-gold text-ink text-[15px] font-[600] px-6 py-3 hover:bg-gold-60 transition-colors cursor-pointer";
+  "ga-cta inline-flex items-center justify-center gap-2 rounded-[6px] bg-gold text-ink text-[15px] font-[600] px-6 py-3 hover:bg-gold-60 transition-colors cursor-pointer";
 const btnSecondary =
-  "inline-flex items-center justify-center rounded-[6px] border border-ink text-ink text-[15px] font-[600] px-6 py-3 hover:bg-surface transition-colors";
+  "ga-cta inline-flex items-center justify-center rounded-[6px] border border-ink text-ink text-[15px] font-[600] px-6 py-3 hover:bg-surface transition-colors";
 const btnSecondaryDark =
-  "inline-flex items-center justify-center rounded-[6px] border border-ink-line text-readme text-[15px] font-[600] px-6 py-3 hover:border-ink-muted transition-colors";
+  "ga-cta inline-flex items-center justify-center rounded-[6px] border border-ink-line text-readme text-[15px] font-[600] px-6 py-3 hover:border-ink-muted transition-colors";
 
 export default function Zer0Home() {
   const [scrolled, setScrolled] = useState(false);
