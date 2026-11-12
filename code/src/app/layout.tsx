@@ -3,7 +3,6 @@ import { Montserrat, Outfit } from "next/font/google";
 import "./globals.css";
 import NetworkStatusBanner from "./components/common/networkStatus";
 import Script from "next/script";
-import { GA_MEASUREMENT_ID } from "./lib/analytics";
 import { AnalyticsProvider } from "./lib/analyticsProvider";
 
 const outfit = Outfit({
@@ -127,25 +126,8 @@ export default function RootLayout({
             }),
           }}
         />
-        {GA_MEASUREMENT_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_MEASUREMENT_ID}', {
-                  send_page_view: false,
-                  cookie_flags: 'SameSite=None;Secure',
-                });
-              `}
-            </Script>
-          </>
-        )}
+        {/* smallTech analytics: one GA4 property for every site (see public/st-analytics.js) */}
+        <Script src="/st-analytics.js" strategy="afterInteractive" />
       </head>
       <body
         className={`${outfit.variable} ${montserrat.variable} antialiased min-h-screen flex flex-col`}

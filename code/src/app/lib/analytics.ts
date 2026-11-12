@@ -11,12 +11,9 @@
  *   analytics.track('cta_click', { cta_text: 'Sign Up', location: 'hero' });
  */
 
-/* ================================================================== */
-/*  GA Measurement ID                                                  */
-/* ================================================================== */
-
-export const GA_MEASUREMENT_ID =
-  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? 'G-L1SLDVPSX2';
+/* The tag itself is loaded by public/st-analytics.js: one GA4 property for every
+   smallTech site, production hostnames only, private paths (dashboard, embed, chat)
+   skipped. This module only sends events through the gtag that script defines. */
 
 /* ================================================================== */
 /*  Low-level gtag helpers                                             */
@@ -235,10 +232,7 @@ export const analytics = {
    * gtag script has loaded.
    */
   init() {
-    if (!GA_MEASUREMENT_ID) return;
-    gtag('config', GA_MEASUREMENT_ID, {
-      send_page_view: false, // we fire page_view manually for SPA
-    });
+    /* No-op: public/st-analytics.js configures the tag. */
   },
 
   /** Fire a strongly-typed custom event. */
@@ -246,34 +240,30 @@ export const analytics = {
     event: E,
     params: AnalyticsEventMap[E],
   ) {
-    if (!GA_MEASUREMENT_ID) return;
     gtag('event', event, {
       ...params,
       // Attach timestamp for every event so BigQuery exports are
       // easy to correlate.
       event_timestamp: new Date().toISOString(),
     });
+    // GA4 recommended event, so sign-ups can be marked as a key event.
+    if (event === 'signup_form_success') gtag('event', 'sign_up', { method: 'chatbot0' });
   },
 
   /** Convenience wrapper for SPA virtual page-views. */
-  pageView(path: string, title: string) {
-    if (!GA_MEASUREMENT_ID) return;
-    gtag('event', 'page_view', {
-      page_title: title,
-      page_location: typeof window !== 'undefined' ? window.location.href : '',
-      page_path: path,
-    });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  pageView(_path: string, _title: string) {
+    /* No-op: GA4 measures page views itself, including router navigations
+       (history changes). Sending one here would count each page twice. */
   },
 
   /** Set persistent user-scoped properties (e.g. after signup). */
   setUserProperties(props: Record<string, string | number | boolean>) {
-    if (!GA_MEASUREMENT_ID) return;
     gtag('set', 'user_properties', props);
   },
 
   /** Measure a timed operation (e.g. API call). */
   timing(name: string, durationMs: number, meta?: Record<string, unknown>) {
-    if (!GA_MEASUREMENT_ID) return;
     gtag('event', 'timing_complete', {
       name,
       value: Math.round(durationMs),
