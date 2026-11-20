@@ -8,7 +8,7 @@ export const TRAINING_URL = "https://smalltech.in/#training";
 export const hero = {
   eyebrow: "Zer0 by smallTech",
   titleLead: "The multi-agent OS for",
-  titleAccent: "small businesses.",
+  titleAccent: "businesses.",
   oneLiner: "Agents do the busywork. You make the calls.",
   body:
     "Zer0 runs your sales, website chat, data and cloud on agents that work end to end, with approval gates where it matters and an audit trail for everything.",
@@ -115,7 +115,7 @@ export const principles = [
   { title: "Human in the loop", body: "Agents prep. You approve." },
   { title: "Audit everything", body: "Every step logged. Nothing hidden." },
   { title: "One workflow first", body: "Prove it, then scale." },
-  { title: "Small-business pricing", body: "No enterprise budget required." },
+  { title: "Outcome-based pricing", body: "Pay for results, not seats." },
 ];
 
 export const closing = {

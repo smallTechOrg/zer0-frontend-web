@@ -1,21 +1,15 @@
 import type { Metadata } from "next";
-import Home from "../homePage";
+import MovedTo from "../components/common/movedTo";
 
-// Page-specific SEO metadata
+const TARGET = "https://chatbot0.smalltech.in/support";
+
 export const metadata: Metadata = {
-  // Renders as "AI Support Agent | Zer0" via the title template in layout.tsx
-  title: "AI Support Agent",
-  description:
-    "Give your customers instant answers with Zer0's AI support agent. Reduce ticket volume and improve satisfaction automatically.",
-  // Canonical prevents duplicate-content issues if this page is ever linked with query params
-  alternates: { canonical: "/support" },
-  openGraph: {
-    title: "Zer0 AI Support Agent — Instant Customer Answers",
-    description:
-      "Reduce support tickets and delight customers with Zer0's always-on AI support agent.",
-    url: "https://zer0.smalltech.in/support",
-  },
+  title: "chatbot0 support agent",
+  robots: { index: false, follow: true },
+  alternates: { canonical: TARGET },
+  other: { refresh: `0; url=${TARGET}` },
 };
-export default function SupportRoute() {
-  return <Home initialPage="support" />;
+
+export default function Page() {
+  return <MovedTo url={TARGET} label="The chatbot0 support agent" />;
 }

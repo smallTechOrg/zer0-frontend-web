@@ -1,21 +1,15 @@
 import type { Metadata } from "next";
-import Home from "../homePage";
+import MovedTo from "../components/common/movedTo";
 
-// Page-specific SEO metadata
+const TARGET = "https://chatbot0.smalltech.in/signup";
+
 export const metadata: Metadata = {
-  // Renders as "Sign Up | Zer0" via the title template in layout.tsx
-  title: "Sign Up",
-  description:
-    "Create your free Zer0 account and deploy an AI agent on your website in minutes.",
-  alternates: { canonical: "/signup" },
- openGraph: {
-    title: "Sign Up - Zer0 AI Sales Agent",
-    description:
-      "Create your free Zer0 account and deploy an AI agent on your website in minutes.",
-    url: "https://zer0.smalltech.in/signup",
-  },
+  title: "chatbot0 sign-up",
+  robots: { index: false, follow: true },
+  alternates: { canonical: TARGET },
+  other: { refresh: `0; url=${TARGET}` },
 };
 
-export default function SignUpRoute() {
-  return <Home initialPage="signup" />;
+export default function Page() {
+  return <MovedTo url={TARGET} label="chatbot0 sign-up" />;
 }
