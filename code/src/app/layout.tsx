@@ -29,19 +29,20 @@ export const metadata: Metadata = {
 
   title: {
     // Fallback title used when a page doesn't export its own metadata.title
-    default: "Zer0 — The Multi-Agent OS for Small Businesses",
+    default: "Zer0 — The Multi-Agent OS for Businesses",
     // Template applied to all child page titles: e.g. "Pricing" → "Pricing | Zer0"
     template: "%s | Zer0",
   },
 
   description:
-    "Zer0 is the multi-agent OS for small businesses. Agents run your sales, website chat, data and cloud end to end. You approve what matters. Everything is audited.",
+    "Zer0 is the multi-agent OS for businesses. Agents run your sales, website chat, data and cloud end to end. You approve what matters. Everything is audited.",
 
   // Keywords hint for crawlers (low ranking signal but still used by some engines)
   keywords: [
-    "agentic AI for small business",
+    "agentic AI for business",
     "agentic workflows",
-    "AI agents for small business",
+    "multi-agent OS",
+    "AI agents for business",
     "business workflow automation",
     "human-in-the-loop AI",
     "AI sales agent",
@@ -66,24 +67,24 @@ export const metadata: Metadata = {
 
   // Open Graph tags — used by Facebook, LinkedIn, Slack, etc. for link previews
   openGraph: {
-    title: "Zer0 — The Multi-Agent OS for Small Businesses",
+    title: "Zer0 — The Multi-Agent OS for Businesses",
     description:
-      "Zer0 is the multi-agent OS for small businesses. Agents run your sales, website chat, data and cloud end to end. You approve what matters. Everything is audited.",
+      "Zer0 is the multi-agent OS for businesses. Agents run your sales, website chat, data and cloud end to end. You approve what matters. Everything is audited.",
     url: "https://zer0.smalltech.in",
     siteName: "Zer0",
     locale: "en_US",
     type: "website",
     // opengraph-image.tsx in app/ generates this PNG automatically at build time
-    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Zer0 — The Multi-Agent OS for Small Businesses" }],
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Zer0 — The Multi-Agent OS for Businesses" }],
   },
 
   // Twitter card — controls how links appear when shared on X/Twitter
   // "summary_large_image" shows a large banner; image comes from opengraph-image.tsx
   twitter: {
     card: "summary_large_image",
-    title: "Zer0 — The Multi-Agent OS for Small Businesses",
+    title: "Zer0 — The Multi-Agent OS for Businesses",
     description:
-      "The multi-agent OS for small businesses. Agents do the busywork. You make the calls.",
+      "The multi-agent OS for businesses. Agents do the busywork. You make the calls.",
     images: ["/opengraph-image.png"],
   },
 };
@@ -109,7 +110,7 @@ export default function RootLayout({
               name: "Zer0",                     // The official name of the software
               applicationCategory: "BusinessApplication", // Categorizes it for app stores/search rankings
               description:
-                "The multi-agent OS for small businesses: agents that run workflows end to end, with human approval gates and an audit trail.", // High-level product summary
+                "The multi-agent OS for businesses: agents that run workflows end to end, with human approval gates and an audit trail.", // High-level product summary
               operatingSystem: "Web Browser",   // Specifies this is a SaaS/Web app, not a Windows/Mac exe
               url: "https://zer0.smalltech.in", // The primary link to the software
               author: {

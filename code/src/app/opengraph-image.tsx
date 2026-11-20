@@ -9,7 +9,7 @@
 import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
-export const alt = "Zer0 — The Multi-Agent OS for Small Businesses";
+export const alt = "Zer0 — The Multi-Agent OS for Businesses";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -54,7 +54,7 @@ export default function Image() {
                 color: "transparent",
               }}
             >
-              small businesses.
+              businesses.
             </span>
           </div>
         </div>

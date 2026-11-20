@@ -1,22 +1,15 @@
 import type { Metadata } from "next";
-import Home from "../homePage";
+import MovedTo from "../components/common/movedTo";
 
-// Page-specific SEO metadata 
+const TARGET = "https://chatbot0.smalltech.in/pricing";
+
 export const metadata: Metadata = {
-  // Renders as "Pricing | Zer0" via the title template in layout.tsx
-  title: "Pricing",
-  description:
-    "Simple, transparent pricing for Zer0 AI agents. Start free and scale as you grow. No hidden fees.",
-  // Canonical prevents duplicate-content issues if this page is ever linked with query params
-  alternates: { canonical: "/pricing" },
-  openGraph: {
-    title: "Zer0 Pricing — Plans for Every Small Business",
-    description:
-      "Simple, transparent pricing for Zer0 AI agents. Start free and scale as you grow.",
-    url: "https://zer0.smalltech.in/pricing",
-  },
+  title: "chatbot0 pricing",
+  robots: { index: false, follow: true },
+  alternates: { canonical: TARGET },
+  other: { refresh: `0; url=${TARGET}` },
 };
 
-export default function PricingRoute() {
-  return <Home initialPage="pricing" />;
+export default function Page() {
+  return <MovedTo url={TARGET} label="chatbot0 pricing" />;
 }
