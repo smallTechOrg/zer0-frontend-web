@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "./components/core/footer.css";
 @import "./components/typography.css";
-@import './components/common/dropdown.css';
 
 @theme inline {
   /* Primary palette: 5 colors */
